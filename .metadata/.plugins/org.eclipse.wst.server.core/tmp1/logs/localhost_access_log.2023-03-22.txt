@@ -1,0 +1,9 @@
+127.0.0.1 - - [22/Mar/2023:14:33:19 +0530] "GET / HTTP/1.1" 404 751
+0:0:0:0:0:0:0:1 - - [22/Mar/2023:14:33:26 +0530] "GET /note_maker/ HTTP/1.1" 200 2918
+0:0:0:0:0:0:0:1 - - [22/Mar/2023:14:33:30 +0530] "GET /note_maker/add_notes.jsp HTTP/1.1" 200 3205
+0:0:0:0:0:0:0:1 - - [22/Mar/2023:14:34:02 +0530] "POST /note_maker/SaveNoteServlet HTTP/1.1" 200 91
+0:0:0:0:0:0:0:1 - - [22/Mar/2023:14:34:31 +0530] "POST /note_maker/SaveNoteServlet HTTP/1.1" 200 91
+0:0:0:0:0:0:0:1 - - [22/Mar/2023:14:34:37 +0530] "GET /note_maker/add_notes.jsp? HTTP/1.1" 200 3205
+0:0:0:0:0:0:0:1 - - [22/Mar/2023:14:34:43 +0530] "GET /note_maker/all_notes.jsp HTTP/1.1" 500 12314
+0:0:0:0:0:0:0:1 - - [22/Mar/2023:14:34:47 +0530] "GET /note_maker/index.jsp HTTP/1.1" 200 2918
+0:0:0:0:0:0:0:1 - - [22/Mar/2023:14:34:49 +0530] "GET /note_maker/index.jsp HTTP/1.1" 200 2918

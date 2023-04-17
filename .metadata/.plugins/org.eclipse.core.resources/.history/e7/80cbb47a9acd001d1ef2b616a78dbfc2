@@ -1,0 +1,60 @@
+package com.bikkadit.HQL;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class StudentServiceDynamic {
+
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Configuration cfg = new Configuration();
+
+		SessionFactory factory = cfg.configure("hibernate.cfg.xml").buildSessionFactory();
+		Session session = factory.openSession();
+		Transaction tx = session.beginTransaction();
+//**********************Using Hibernate Method******************
+		/*
+		 * String hql = "from Student where id= :x";
+		 *  Query query =session.createQuery(hql);
+		 *   query.setParameter("x", 2); 
+		 *   List<Student> list =		 * query.list(); 
+		 *   for(Student st:list) { System.out.println(st.getName()+ "=========="+st.getId(); }
+		 */
+
+		/*
+		 * String hql = "from Student where id= :x or id = :y"; Query query =
+		 * session.createQuery(hql); query.setParameter("x", 2); query.setParameter("y",
+		 * 7); List<Student> list = query.list(); for (Student st : list) {
+		 * System.out.println(st.getName()+"  " +st.getCity()+"  "+st.getDept());
+		 * 
+		 * }
+		 */
+
+		/*
+		 * String hql = "update Student set city = :x where id = :y"; Query query =
+		 * session.createQuery(hql); query.setParameter("x", "Pune");
+		 * query.setParameter("y", 7); int idz = query.executeUpdate();
+		 * 
+		 * System.out.println("Data updated of: " + idz);
+		 */
+		
+		/*
+		 * String hql = "delete from Student where id = :x"; Query query =
+		 * session.createQuery(hql); query.setParameter("x", 2); int idz =
+		 * query.executeUpdate();
+		 * 
+		 * System.out.println("Data Deleted of: " + idz);
+		 */
+		
+		tx.commit();
+		
+		session.close();
+
+	}
+
+}

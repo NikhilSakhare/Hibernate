@@ -1,0 +1,42 @@
+package com.bikkedit.hbr.HQL;
+
+
+public class App 
+{
+	 @SuppressWarnings("deprecation")
+		public static void main( String[] args )
+	    {
+	    	Configuration cfg = new Configuration();
+	    	cfg.configure("hibernate.cfg.xml");
+	    	SessionFactory factory = cfg.buildSessionFactory();
+//	    	Country ctr = new Country();
+//	    	ctr.setName("india");
+//	    	ctr.setLang("hindi");
+//	    	ctr.setPm("modi");
+//	    	
+//	    	Country ctr1 = new Country();
+//	    	ctr1.setName("pak");
+//	    	ctr1.setLang("urdu");
+//	    	ctr1.setPm("sharif");
+	    	
+	    	// Object in Transient State
+	    	Session session = factory.openSession();
+//	    	Transaction tx = session.beginTransaction();
+//	    	session.save(ctr1);
+//	    	session.save(ctr);
+//	    	tx.commit();
+	    	
+	    	String HQL = "from Country";  //Static query
+	    	Query query = session.createQuery(HQL);// converted into HQL query
+	    	List<Country> dataList = query.list();//query executed using list()
+	    	
+	    	for(Country c:dataList) {
+	    		System.out.println(c.getName());
+	    	}
+	    	
+	    	session.close();    	
+	    	factory.close();
+	    	}
+	    }
+
+}

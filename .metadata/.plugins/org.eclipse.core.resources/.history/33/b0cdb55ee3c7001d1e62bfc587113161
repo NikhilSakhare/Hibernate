@@ -1,0 +1,89 @@
+package com.bikkedit.hbr.HQL1;
+
+
+import javax.security.auth.login.AppConfigurationEntry;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class StudentService {
+
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args) {
+
+		Configuration cfg = new Configuration() {
+				
+			
+		SessionFactory factory = cfg.getAppConfigurationEntry("hibernate.cfg.xml").buildSessionFactory();
+		
+		  Student st = new Student(); // Object in Transient State
+		  
+//		  st.setName("Krishna"); st.setDept("CE"); st.setAge(17); st.setCity("Nagar");
+//		  st.setEca("Cricket"); st.setMark(73.12);
+//		 
+//
+//		
+//		  Student st2 = new Student(); st2.setName("Jagdish"); st2.setDept("Comp");
+//		  st2.setAge(18); st2.setCity("Beed"); st2.setEca("Chess"); st2.setMark(73.12);
+//		 
+
+		Session session = factory.openSession();
+
+		@Override
+		public AppConfigurationEntry[]getAppConfigurationEntryEntries(String name) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
+//		Transaction tx = session.beginTransaction();
+//
+//		
+//		  session.save(st); // Persistent state st.setCity("Mumbai");
+//		  session.save(st2); 
+//		 
+
+//		String hql = "from Student";
+//		Query query = session.createQuery(hql);
+//				List<Student> list = query.list();
+//				
+//				for(Student st:list) {
+//					System.out.println(st.getName());
+//				}
+
+//		String hql = "select name from Student";
+//		Query query = session.createQuery(hql);
+//				List<String> list = query.list();
+//				
+//				for(String st:list) {
+//					System.out.println(st);
+//				}
+
+//		String hql = "select count(id) from Student";
+//		Query query = session.createQuery(hql);
+//		List<String> list = query.list();
+//		Long count = (Long) query.uniqueResult();
+//
+//		System.out.println("No. of Rows: " + count);
+
+//		String hql = "update Student set city = 'AhmadNagar' where id = 1";
+//		Query query = session.createQuery(hql);
+//		int idz = query.executeUpdate();
+//
+//		System.out.println("Data updated of: " + idz);
+//		
+//		tx.commit();
+//		session.close(); // Detatched State st.setCity("Delhi"); factory.close();
+
+//		String hql = "delete from Student where id = 1";
+//		Query query = session.createQuery(hql);
+//		int idz = query.executeUpdate();
+//
+//		System.out.println("Data updated of: " + idz);
+//		
+//		tx.commit();
+		session.close();
+	
+	
+}
+	}}

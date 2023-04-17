@@ -1,0 +1,49 @@
+package one2many;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+
+@Entity
+public class City {
+	
+	@Id
+	private int cid;
+	private String cname;
+	
+	@ManyToOne
+	@JoinColumn(name="FK_country")
+	private Country country;//one2many
+
+	@Override
+	public String toString() {
+		return "City [cid=" + cid + ", cname=" + cname + ", country=" + country + "]";
+	}
+
+	public int getCid() {
+		return cid;
+	}
+
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
+
+	public String getCname() {
+		return cname;
+	}
+
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
+
+	public Country getCountry() {
+		return country;
+	}
+
+	public void setCountry(Country country) {
+		this.country = country;
+	}
+	
+
+}

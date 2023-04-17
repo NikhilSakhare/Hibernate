@@ -1,0 +1,53 @@
+package com.CacheDemo;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+    	  Configuration cfg = new Configuration();
+          cfg.configure("hibernate.cfg.xml");
+          SessionFactory factory = cfg.buildSessionFactory();
+          Session session = factory.openSession();
+          
+//          Transaction tx = session.beginTransaction();
+          
+//          Employee emp = new Employee();
+//          emp.setId(101);
+//          emp.setName("Ganesh");
+//          emp.setEmail("mundeganesh212@gmail.com");
+//          emp.setDept("HR");
+          
+//          session.save(emp);
+//          tx.commit();
+          
+          Employee employee = session.get(Employee.class, 1);
+          System.out.println(employee.getName());
+          
+          Employee employee4 = session.get(Employee.class, 1);
+          System.out.println(employee4.getName());
+          session.close();
+          
+          Session session1 = factory.openSession();
+          Employee employee2 = session1.get(Employee.class, 1);
+          System.out.println(employee2.getName());
+          session.close();
+          
+          Session session2 = factory.openSession();
+          Employee employee3 = session2.get(Employee.class, 1);
+          System.out.println(employee3.getName());
+          session2.close();
+          factory.close();
+          
+          
+    }
+}
